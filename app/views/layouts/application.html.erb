@@ -5,8 +5,11 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'projekt' %>
   </head>
 
   <body>
@@ -28,8 +31,8 @@
           <div class="navbar-item has-dropdown is-hoverable">
             <%= link_to 'New', '#', class: "navbar-link" %>
             <div class="navbar-dropdown">
-              <%#= link_to 'Project', new_project_path, class:"navbar-item" %>
-              <%#= link_to 'Team', new_team_path, class:"navbar-item" %>
+              <%= link_to 'Project', new_project_path, class:"navbar-item" %>
+              <%= link_to 'Team', new_team_path, class:"navbar-item" %>
             </div>
           </div>
           <div class="navbar-item has-dropdown is-hoverable">
@@ -54,7 +57,7 @@
     	</div>
    	<% end %>
     <% if flash[:alert] %>
-    <div class="notification is-danger global-notification">
+    <div class="notification is-white global-notification">
       <p class="alert"><%= alert %></p>
     </div>
     <% end %>

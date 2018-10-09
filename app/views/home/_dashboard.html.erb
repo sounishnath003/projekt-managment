@@ -1,0 +1,87 @@
+<div class="block">
+  <div class="container">
+    <br>
+    <h3 class="title border-bottom is-5 has-text-centered">Welcome   <%= current_user.name %> 👏</h3>
+    <h3 class="subtitle is-5 has-text-centered">Get The Shit Done 🎈 </h3>
+    <br>
+    <hr style="color: #000; background: #000;">
+    <div class="columns">
+      <div class="column  col-dashboard">
+        <div class="level">
+          <div class="level-left">
+            <h3 class="subtitle is-4">My Projects
+              <span class="tag is-primary is-rounded"><%= @projects.count %></span>
+            </h3>
+          </div>
+          <div class="level-right">
+            <p class="field">
+              <%= link_to new_project_path, class: "button is-small" do %>
+                        <span class="icon has-text-link is-small">
+                          <i class="fa fa-plus"></i>
+                        </span>
+              <% end %>
+            </p>
+          </div>
+        </div>
+        <hr>
+        <%= @projects.each do |projects| %>
+          <div class="content">
+            <p class="title is-4">
+              <%= link_to projects.name, project_path %>
+            </p>
+            <p class="subtitle is-6">
+              <%= link_to projects.team.name, project_path %>
+            </p>
+            <span class="text-is-4">
+              Created by : <%= projects.user.name %>
+            </span>
+          </div>
+          <% end %>
+      </div>
+
+      <div class="column col-dashboard">
+        <div class="level">
+          <div class="level-left">
+            <h3 class="subtitle is-4">My Teams
+              <span class="tag is-primary is-rounded"><%= @teams.count %></span>
+            </h3>
+          </div>
+          <div class="level-right">
+            <p class="field">
+              <%= link_to new_team_path, class: "button is-small" do %>
+        <span class="icon has-text-link is-round is-small">
+          <i class="fa fa-plus"></i>
+        </span>
+              <% end %>
+            </p>
+          </div>
+        </div>
+        <hr>
+        <% @teams.each do |team| %>
+        <div class="content">
+          <p class="title is-4">
+            <%= link_to team.name, team %>
+          </p>
+          <p class="subtitle is-6">
+            <%= team.users.count %> Members
+          </p>
+          <span class="text is-4">
+            <%= safe_join(team.users.map {|user| user.name }, ' , ') %>
+          </span>
+        </div>
+          <% end %>
+      </div>
+
+      <div class="column col-dashboard">
+        <h3 class="subtitle is-3">Activity</h3>
+        <hr>
+        <ul class="list notification">
+          <li>Activity Team</li>
+        </ul>
+      </div>
+
+
+      <!-- The last Main Divs'-->
+    </div>
+  </div>
+</div>

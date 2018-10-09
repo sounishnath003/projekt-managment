@@ -16,3 +16,14 @@
 
 
  @import 'bulma';
+@import "normalize";
+ @import 'teams';
+ @import 'projects';
+@import "dashboard";
+
+ * {
+     font-family: product sans;
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+ }
