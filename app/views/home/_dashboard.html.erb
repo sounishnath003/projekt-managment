@@ -4,7 +4,6 @@
     <h3 class="title border-bottom is-5 has-text-centered">Welcome   <%= current_user.name %> 👏</h3>
     <h3 class="subtitle is-5 has-text-centered">Get The Shit Done 🎈 </h3>
     <br>
-    <hr style="color: #000; background: #000;">
     <div class="columns">
       <div class="column  col-dashboard">
         <div class="level">
@@ -23,14 +22,14 @@
             </p>
           </div>
         </div>
-        <hr>
-        <%= @projects.each do |projects| %>
+        <hr/>
+        <% @projects.each do |projects| %>
           <div class="content">
             <p class="title is-4">
-              <%= link_to projects.name, project_path %>
+              <%= link_to projects.name, projects_path %>
             </p>
             <p class="subtitle is-6">
-              <%= link_to projects.team.name, project_path %>
+              <%= link_to projects.team.name, 'projects#show' %>
             </p>
             <span class="text-is-4">
               Created by : <%= projects.user.name %>
@@ -85,3 +84,4 @@
     </div>
   </div>
 </div>
+
