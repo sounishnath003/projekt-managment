@@ -12,7 +12,7 @@
               <div class="border-light border-radius-3 pa2">
                 <div class="columns">
                   <div class="column is-3">
-                    <%= gravatar_image_tag(member.email.gsub('spam','mdeering'), size:48, alt: member.name, class:'image is-48x48') %>
+                    <%= gravatar_image_tag(member.email.gsub('spam','mdeering'), size:48, alt: member.name, :gravatar => { :secure => true }, class:'image is-48x48') %>
                   </div>
                   <div class="column is-9">
                     <h3 class="fw6 f4"><%= member.name %></h3>

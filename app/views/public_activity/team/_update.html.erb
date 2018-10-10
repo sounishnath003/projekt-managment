@@ -1,0 +1,10 @@
+<li class="border-bottom">
+  <span class="icon is-small">
+    <i class="fa fa-refresh"></i>
+  </span> updated team
+  <% if activity.trackable %>
+    <%= link_to activity.trackable.name, activity.trackable %>
+  <% else %>
+    which has been removed
+  <% end %>
+</li>

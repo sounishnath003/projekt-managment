@@ -5,6 +5,6 @@ class HomeController < ApplicationController
       @projects = Project.where('team_id = ?', current_user.team_id)
     end
 
-    #@activities = PublicActivity::Activity.order("created_at DESC").where(owner_id: current_user, owner_type: "User")
+    @activities = PublicActivity::Activity.order("created_at DESC").where(owner_id: current_user, owner_type: "User")
   end
 end
