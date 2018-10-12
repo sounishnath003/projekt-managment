@@ -12,6 +12,14 @@ class CommentsController < ApplicationController
     respond_with(@comment)
   end
 
+  def destroy
+    @project = Project.find(params[:project_id])
+    @comment = @project.comments.find(params[:id])
+    @comment.delete
+
+    redirect_to project_path(@project)
+  end
+
   private
 
   def find_project_id

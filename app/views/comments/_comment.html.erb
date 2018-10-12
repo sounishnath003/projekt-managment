@@ -10,6 +10,9 @@
         <p class="comment_time is-8 has-text-weight-semibold">
           <%= time_ago_in_words(c.created_at) %> Ago
         </p>
+        <p>
+          <%= link_to 'Delete', [c.project, c]  , method: :delete , class: "button is-small is-danger" , wrapper: false, data: {alert: "Are you sure?." } %>
+        </p>
         <hr>
       <% end %>
     </div>
