@@ -1,0 +1,17 @@
+<div class="block">
+    <div class="comment">
+  <%= div_for @project.comments do |c| %>
+        <p class="comment_name">
+          <strong> 😊 <%= current_user.name %> </strong>
+        </p>
+        <p class="comment_body">
+          <%= c.comment %>
+        </p>
+        <p class="comment_time is-8 has-text-weight-semibold">
+          <%= time_ago_in_words(c.created_at) %> Ago
+        </p>
+        <hr>
+      <% end %>
+    </div>
+</div>
+

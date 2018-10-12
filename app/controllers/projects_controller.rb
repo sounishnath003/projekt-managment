@@ -26,6 +26,8 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = current_user.projects.build(project_params)
+    @project = Project.find(params[:project_id])
+    @comment = @project.comments.build(comment_params)
 
     respond_to do |format|
       if @project.save
@@ -72,4 +74,8 @@ class ProjectsController < ApplicationController
     def project_params
       params.require(:project).permit(:name, :description, :team_id)
     end
+
+  def comment_params
+    params.require(:comment).permit(:comment, :project_id)
+  end
 end

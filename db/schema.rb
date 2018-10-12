@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_10_060457) do
+ActiveRecord::Schema.define(version: 2018_10_12_031302) do
 
   create_table "activities", force: :cascade do |t|
     t.string "trackable_type"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 2018_10_10_060457) do
     t.index ["recipient_type", "recipient_id"], name: "index_activities_on_recipient_type_and_recipient_id"
     t.index ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"
     t.index ["trackable_type", "trackable_id"], name: "index_activities_on_trackable_type_and_trackable_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "name"
+    t.text "comment", limit: 200
+    t.integer "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_comments_on_project_id"
   end
 
   create_table "projects", force: :cascade do |t|

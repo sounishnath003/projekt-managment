@@ -34,6 +34,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'gravatar_image_tag'
 gem 'jquery-rails'
+gem 'record_tag_helper'
 gem "wysiwyg-rails"
 gem 'public_activity', '~> 1.5'
 gem "figaro"

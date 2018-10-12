@@ -22,6 +22,30 @@
           <%= @project.description.html_safe %>
         </div>
       </div>
+        </div>
+      </div>
+      </section>
     </div>
+  </div>
+</section>
+
+<!-- Commments Adding -->
+<section class="section is-centered is-7">
+  <div class="block">
+    <section class="section">
+      <h2 class="title is-3"> <%= @project.comments.count %> Comments</h2>
+      <hr>
+
+      <div class="block">
+        <div class="section">
+          <%= render "comments/comment" %>
+        </div>
+      </div>
+
+      <h3 class="subtitle-is-4 is-text-weight-bold">
+        Add a comment:
+      </h3>
+      <%= render "comments/form" %>
+    </section>
   </div>
 </section>
