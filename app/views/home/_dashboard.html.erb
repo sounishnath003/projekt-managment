@@ -26,10 +26,10 @@
         <% @projects.each do |projects| %>
           <div class="content">
             <p class="title is-4">
-              <%= link_to projects.name, projects_path %>
+              <%= link_to projects.name, projects %>
             </p>
             <p class="subtitle is-6">
-              <%= link_to projects.team.name, 'projects#show' %>
+              <%= link_to projects.team.name, projects %>
             </p>
             <span class="text-is-4">
               Created by : <%= projects.user.name %>
@@ -82,7 +82,11 @@
         </ul>
       </div>
 
-
+    <% if user_signed_in? %>
+        <div class="block">
+          <h1>PROJEKT</h1>
+        </div>
+    <% end %>
       <!-- The last Main Divs'-->
     </div>
   </div>
