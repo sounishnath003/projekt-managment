@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_12_031302) do
+ActiveRecord::Schema.define(version: 2018_10_17_075411) do
 
   create_table "activities", force: :cascade do |t|
     t.string "trackable_type"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2018_10_12_031302) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.integer "team_id"
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
