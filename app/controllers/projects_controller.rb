@@ -26,8 +26,8 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = current_user.projects.build(project_params)
-    @project = Project.find(params[:project_id])
-    @comment = @project.comments.build(comment_params)
+    #@project = Project.find(params[:project_id])
+    #@comment = @project.comments.build(comment_params)
 
     respond_to do |format|
       if @project.save
